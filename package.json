@@ -1,0 +1,19 @@
+{
+  "name": "news-article-nlp",
+  "version": "1.0.0",
+  "description": "article sentiment analysis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Angelica137/news-article-nlp.git"
+  },
+  "author": "Angelica Beristain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Angelica137/news-article-nlp/issues"
+  },
+  "homepage": "https://github.com/Angelica137/news-article-nlp#readme"
+}
