@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Angelica137/news-article-nlp/issues"
   },
-  "homepage": "https://github.com/Angelica137/news-article-nlp#readme"
+  "homepage": "https://github.com/Angelica137/news-article-nlp#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
