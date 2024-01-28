@@ -1,4 +1,4 @@
 alert("I exist");
 
-import { checkForName } from "./checkForName";
-import { handleSubmit } from "./handleSubmit";
+import { checkForName } from "./js/nameChecker.js";
+import { handleSubmit } from "./js/formHandler.js";
