@@ -2,7 +2,7 @@ require("dotenv").config;
 
 const path = require("path");
 const express = require("express");
-const mockAPIResponse = require(".mockAPI.js");
+const mockAPIResponse = require("./mockAPI.js");
 
 const app = express();
 
@@ -11,7 +11,7 @@ app.use(express.static("dist"));
 console.log(__dirname);
 
 app.get("/", function (req, res) {
-  res.sendFile("dist/index.html");
+  res.sendFile(path.resolve(__dirname, "dist", "index.html"));
 });
 
 app.listen(8080, function () {
