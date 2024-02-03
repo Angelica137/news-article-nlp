@@ -13,14 +13,14 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"],
+            presets: ["@babel/preset-env"], // this was modified for standard css
           },
         },
       },
       // I am adding step 6. "Add the test case to the rule in webpack.dev.js and prod" here
       {
-        test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
