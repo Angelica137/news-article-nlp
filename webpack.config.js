@@ -18,10 +18,10 @@ module.exports = {
           },
         },
       },
-      // I am adding step 6. "Add the test case to the rule in webpack.dev.js and prod" here
+      // add scss loaders
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
