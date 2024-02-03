@@ -11,7 +11,7 @@ app.use(express.static("dist"));
 console.log(__dirname);
 
 app.get("/", function (req, res) {
-  res.sendFile(path.resolve("src/client/views/index.html"));
+  res.sendFile("dist/index.html");
 });
 
 app.listen(8080, function () {

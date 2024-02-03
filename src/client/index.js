@@ -1,7 +1,10 @@
-alert("I exist");
+import { checkForName } from "./js/nameChecker";
+import { handleSubmit } from "./js/formHandler";
 
-import { checkForName } from "./js/nameChecker.js";
-import { handleSubmit } from "./js/formHandler.js";
+console.log(checkForName);
+
+alert("I exist");
+console.log("Change!");
 
 // import scss files
 // i had to change this because the files were standard css
