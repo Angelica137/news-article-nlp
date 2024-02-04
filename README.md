@@ -12,3 +12,8 @@ This porject includes parctice with:
 - Creating layouts and page design
 - Service workers
 - Using APIs and creating requests to external URLs
+
+## Usage
+The user is able to enter a URL of an articlae they want to analyse and the app will fetch the summary of the article.
+
+This app uses the Meaning API from meaningcloud.org
