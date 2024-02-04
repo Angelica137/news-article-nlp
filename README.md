@@ -16,4 +16,4 @@ This porject includes parctice with:
 ## Usage
 The user is able to enter a URL of an articlae they want to analyse and the app will fetch the summary of the article.
 
-This app uses the Meaning API from meaningcloud.org
+This app uses the MeaningCloud API from meaningcloud.org
