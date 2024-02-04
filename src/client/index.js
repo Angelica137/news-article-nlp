@@ -7,7 +7,6 @@ alert("I exist");
 console.log("Change!");
 
 // import scss files
-// i had to change this because the files were standard css
 import "./styles/resets.scss";
 import "./styles/base.scss";
 import "./styles/footer.scss";
