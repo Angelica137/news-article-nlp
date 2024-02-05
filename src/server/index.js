@@ -40,6 +40,8 @@ app.post("/summarise", async (req, res) => {
       }
     );
 
+    console.log("MeaningCloud API response:", response.data);
+
     res.send(response.data);
   } catch (error) {
     console.error("error with MeaningCloud API:", error);

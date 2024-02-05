@@ -1,6 +1,9 @@
 function handleSubmit(event) {
   event.preventDefault();
 
+  // check the form is submitted
+  console.log("Form submission triggered");
+
   let formText = document.getElementById("name").value;
   checkForName(formText);
 
@@ -20,6 +23,7 @@ function handleSubmit(event) {
       return res.json();
     })
     .then(function (res) {
+      console.log("Response from server:", res);
       document.getElementById("results").innerHTML = JSON.stringify(res);
     })
     .catch((error) => console.error("Error:", error));

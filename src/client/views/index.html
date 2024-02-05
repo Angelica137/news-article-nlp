@@ -13,7 +13,8 @@
 
     <main>
       <section>
-        <form class="" onsubmit="return handleSubmit(event)">
+        <!-- Removed return from handleSubmit events-->
+        <form class="" onsubmit="handleSubmit(event)">
           <!-- I removed onblur = "onBlur()"-->
           <input
             id="name"
@@ -26,8 +27,8 @@
             type="submit"
             name=""
             value="submit"
-            onclick="return handleSubmit(event)"
-            onsubmit="return handleSubmit(event)"
+            onclick="handleSubmit(event)"
+            onsubmit="handleSubmit(event)"
           />
         </form>
       </section>
@@ -41,5 +42,6 @@
     <footer>
       <p>This is a footer</p>
     </footer>
+    <script src="/dist/main.js"></script>
   </body>
 </html>
