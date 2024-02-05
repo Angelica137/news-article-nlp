@@ -11,6 +11,7 @@ app.use(express.json());
 
 app.use(express.static("dist"));
 
+// this did now seem to work here
 console.log(__dirname);
 
 // this call gets the home page
@@ -22,8 +23,8 @@ app.post("/summarise", (req, res) => {
   res.json({ message: "Summarise route hit" });
 });
 
-app.listen(8080, function () {
-  console.log("example app listening on port 8080!");
+app.listen(3000, function () {
+  console.log("example app listening on port 3000!");
 });
 
 app.get("/test", function (req, res) {
