@@ -24,6 +24,13 @@ app.get("/test", function (req, res) {
   res.json(mockAPIResponse.json);
 });
 
+app.post("submitForm", (req, res) => {
+  const formData = req.body;
+  console.log("Received form", formData);
+
+  res.json({ message: "Form submitted" });
+});
+
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });

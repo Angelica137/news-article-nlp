@@ -9,7 +9,7 @@ function handleSubmit(event) {
 
   console.log("::: Form Submitted :::");
 
-  fetch("http://localhost:3000/summarise", {
+  fetch("http://localhost:3000/submitForm", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
