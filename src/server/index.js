@@ -24,11 +24,29 @@ app.get("/test", function (req, res) {
   res.json(mockAPIResponse.json);
 });
 
-app.post("/submitForm", (req, res) => {
-  const formData = req.body;
-  console.log("Received form", formData);
+app.post("/submitForm", async (req, res) => {
+  const urlToSummarise = req.body.url;
 
-  res.json({ message: "Form submitted" });
+  /* send post request to api sending the url to summarise from the input field
+	on the client side */
+
+  try {
+    const response = await axios.post(
+      "https://api.meaningcloud.com/summarization-1.0",
+      {
+        key: process.env.API_KEY,
+        url: urlToSummarise,
+        sentences: 10,
+      }
+    );
+
+    console.log("MeaningCloud API response:", response.data);
+
+    res.send(response.data);
+  } catch (error) {
+    console.error("error with MeaningCloud API:", error);
+    res.status(500).send("error processing summarisation request");
+  }
 });
 
 app.listen(3000, () => {
