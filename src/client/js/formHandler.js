@@ -5,11 +5,24 @@ function handleSubmit(event) {
   checkForName(formText);
 
   console.log("::: Form Submitted :::");
-  fetch("http://localhost:8080/test")
-    .then((res) => res.json())
+
+  fetch("http://localhost:8080/summarise", {
+    method: "POST",
+    headers: {
+      "Content-Type": "applications/json",
+    },
+    body: JSON.stringify({ url: formText }),
+  })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Network response was not ok" + res.statusText);
+      }
+      return res.json();
+    })
     .then(function (res) {
-      document.getElementById("results").innerHTML = res.message;
-    });
+      document.getElementById("results").innerHTML = JSON.stringify(res);
+    })
+    .catch((error) => console.error("Error:", error));
 }
 
 export { handleSubmit };
