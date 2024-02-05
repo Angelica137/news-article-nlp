@@ -3,7 +3,6 @@ import { handleSubmit } from "./js/formHandler";
 
 window.handleSubmit = handleSubmit;
 window.checkForName = checkForName;
-window.testSubmit = testSubmit;
 
 console.log(checkForName);
 
@@ -17,7 +16,11 @@ import "./styles/footer.scss";
 import "./styles/form.scss";
 import "./styles/header.scss";
 
+/*
 function testSubmit(event) {
   event.preventDefault();
   console.log("Test function triggered");
 }
+
+window.testSubmit = testSubmit;
+*/
