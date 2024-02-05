@@ -20,6 +20,10 @@ app.get("/summarise", (req, res) => {
   res.json({ message: "Summarise route hit" });
 });
 
+app.get("/test", function (req, res) {
+  res.json(mockAPIResponse.json);
+});
+
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
