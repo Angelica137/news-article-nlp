@@ -9,7 +9,7 @@ function handleSubmit(event) {
   fetch("http://localhost:8080/summarise", {
     method: "POST",
     headers: {
-      "Content-Type": "applications/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({ url: formText }),
   })

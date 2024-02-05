@@ -36,7 +36,7 @@ app.post("/summarise", async (req, res) => {
       {
         key: process.env.API_KEY,
         url: urlToSummarise,
-        sentcens: 10,
+        sentences: 10,
       }
     );
 
