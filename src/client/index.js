@@ -1,6 +1,10 @@
 import { checkForName } from "./js/nameChecker";
 import { handleSubmit } from "./js/formHandler";
 
+window.handleSubmit = handleSubmit;
+window.checkForName = checkForName;
+window.testSubmit = testSubmit;
+
 console.log(checkForName);
 
 alert("I exist");
