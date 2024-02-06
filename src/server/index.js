@@ -17,10 +17,6 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "../../dist", "index.html"));
 });
 
-app.get("/summarise", (req, res) => {
-  res.json({ message: "Summarise route hit" });
-});
-
 app.get("/test", function (req, res) {
   res.json(mockAPIResponse.json);
 });
