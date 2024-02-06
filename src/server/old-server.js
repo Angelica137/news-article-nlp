@@ -56,8 +56,36 @@ app.post("/summarise", async (req, res) => {
   }
 });
 
-/*
 app.post("/submitForm", async (req, res) => {
+  const urlToSummarise = req.body.url;
+  const apiURL = "https://api.meaningcloud.com/summarization-1.0";
+
+  const formdata = new FormData();
+  formdata.append("key", apiKey);
+  formdata.append("txt", urlToSummarise);
+  formdata.append("sentences", "10");
+
+  try {
+    const response = await fetch(apiURL, {
+      method: "POST",
+      body: formdata,
+    });
+
+    if (!response.ok) {
+      throw new Error("HTTP error! Status: ${response.status}");
+    }
+
+    const data = await response.json();
+
+    console.log("MeaningCloud API response:", data);
+    res.json(data);
+  } catch (error) {
+    console.error("error with MeaningCloud API:", error);
+    res.status(500).send("error processing summarise request");
+  }
+});
+
+/*app.post("/submitForm", async (req, res) => {
   const urlToSummarise = req.body.url;
 
   /* send post request to api sending the url to summarise from the input field
@@ -67,7 +95,7 @@ app.post("/submitForm", async (req, res) => {
     const response = await axios.post(
       "https://api.meaningcloud.com/summarization-1.0",
       {
-        key: apiKey,
+        key: "b16dc2fe44aa64798f603e7e3b968756",
         url: urlToSummarise,
         sentences: 10,
       }
@@ -81,30 +109,3 @@ app.post("/submitForm", async (req, res) => {
     res.status(500).send("error processing summarisation request");
   }
 });*/
-
-app.post("/submitForm", async (req, res) => {
-  const urlToSummarise = req.body.url;
-  const formdata = new FormData();
-
-  formdata.append("key", apiKey);
-  formdata.append("txt", urlToSummarise);
-  formdata.append("sentences", "10");
-
-  try {
-    const response = await axios.post(
-      "https://api.meaningcloud.com/summarization-1.0",
-      formdata,
-      {
-        headers: {
-          ...formdata.getHeaders(),
-        },
-      }
-    );
-    console.log("MeaningCloud API response: ", response.data);
-
-    res.send(response.data);
-  } catch (error) {
-    console.error("error with MeaningCloud API", error);
-    res.status(500).send("error processing summarise request");
-  }
-});
