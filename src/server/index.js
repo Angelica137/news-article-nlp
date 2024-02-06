@@ -1,5 +1,4 @@
 require("dotenv").config();
-console.log("loaded environment variables from env file");
 
 const path = require("path");
 const express = require("express");
