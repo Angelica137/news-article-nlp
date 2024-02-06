@@ -4,7 +4,6 @@ console.log(`Hello ${process.env.HELLO}`);
 const path = require("path");
 const express = require("express");
 const mockAPIResponse = require("./mockAPI.js");
-const axios = require("axios");
 
 const app = express();
 
@@ -27,7 +26,7 @@ app.post("/submitForm", async (req, res) => {
 
   const formdata = new FormData();
   formdata.append("key", process.env.API_KEY);
-  formdata.append("txt", urlToSummarise);
+  formdata.append("url", urlToSummarise);
   formdata.append("sentences", "10");
 
   try {
@@ -37,13 +36,18 @@ app.post("/submitForm", async (req, res) => {
     });
 
     if (!response.ok) {
-      throw new Error("HTTP error! Status: ${response.status}");
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
     const data = await response.json();
 
     console.log("MeaningCloud API response:", data);
-    res.json(data);
+
+    if (data.summary) {
+      res.json({ summary: data.summary });
+    } else {
+      res.json({ summary: "" });
+    }
   } catch (error) {
     console.error("error with MeaningCloud API:", error);
     res.status(500).send("error processing summarise request");
