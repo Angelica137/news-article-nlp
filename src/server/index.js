@@ -6,6 +6,9 @@ const mockAPIResponse = require("./mockAPI.js");
 const axios = require("axios");
 const apiKey = process.env.API_KEY;
 
+// try FormData request
+//const FormData = require("form-data");
+
 const app = express();
 
 app.use(express.json());

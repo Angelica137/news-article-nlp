@@ -55,3 +55,56 @@ app.post("/summarise", async (req, res) => {
     res.status(500).send("error processing summarisation request");
   }
 });
+
+/*
+app.post("/submitForm", async (req, res) => {
+  const urlToSummarise = req.body.url;
+
+  /* send post request to api sending the url to summarise from the input field
+	on the client side */
+/*
+  try {
+    const response = await axios.post(
+      "https://api.meaningcloud.com/summarization-1.0",
+      {
+        key: apiKey,
+        url: urlToSummarise,
+        sentences: 10,
+      }
+    );
+
+    console.log("MeaningCloud API response:", response.data);
+
+    res.send(response.data);
+  } catch (error) {
+    console.error("error with MeaningCloud API:", error);
+    res.status(500).send("error processing summarisation request");
+  }
+});*/
+
+app.post("/submitForm", async (req, res) => {
+  const urlToSummarise = req.body.url;
+  const formdata = new FormData();
+
+  formdata.append("key", apiKey);
+  formdata.append("txt", urlToSummarise);
+  formdata.append("sentences", "10");
+
+  try {
+    const response = await axios.post(
+      "https://api.meaningcloud.com/summarization-1.0",
+      formdata,
+      {
+        headers: {
+          ...formdata.getHeaders(),
+        },
+      }
+    );
+    console.log("MeaningCloud API response: ", response.data);
+
+    res.send(response.data);
+  } catch (error) {
+    console.error("error with MeaningCloud API", error);
+    res.status(500).send("error processing summarise request");
+  }
+});
