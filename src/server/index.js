@@ -1,9 +1,11 @@
-require("dotenv").config;
+require("dotenv").config();
+console.log("loaded environment variables from env file");
 
 const path = require("path");
 const express = require("express");
 const mockAPIResponse = require("./mockAPI.js");
 const axios = require("axios");
+const apiKey = process.env.API_KEY;
 
 const app = express();
 
@@ -34,7 +36,7 @@ app.post("/submitForm", async (req, res) => {
     const response = await axios.post(
       "https://api.meaningcloud.com/summarization-1.0",
       {
-        key: process.env.API_KEY,
+        key: apiKey,
         url: urlToSummarise,
         sentences: 10,
       }
