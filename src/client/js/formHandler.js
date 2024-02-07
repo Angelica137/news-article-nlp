@@ -24,7 +24,7 @@ function handleSubmit(event) {
     })
     .then(function (res) {
       console.log("Response from server:", res);
-      document.getElementById("results").innerHTML = JSON.stringify(res);
+      document.getElementById("results").innerHTML = res.summary;
     })
     .catch((error) => console.error("Error:", error));
 }
