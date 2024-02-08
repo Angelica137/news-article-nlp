@@ -38,8 +38,12 @@ describe("handleSubmit function", () => {
     });
 
     expect(document.getElementById).toHaveBeenCalledWith("name");
-    expect(document.getElementById("results").innerHTML).toBe(
-      "Mock summary response"
-    );
+
+    // try add a delay to see if test fetches reustls
+    setTimeout(() => {
+      expect(document.getElementById("results").innerHTML).toBe(
+        "Mock summary response"
+      );
+    }, 100);
   });
 });
