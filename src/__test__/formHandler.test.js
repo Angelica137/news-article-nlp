@@ -1,4 +1,4 @@
-import { handleSubmit } from "/Users/Angelica/Documents/Coding/Udacity/front-end-nanodegree/news-article-nlp/src/client/js/formHandler.js";
+import { handleSubmit } from "../client/js/formHandler";
 
 // Mock the fetch function
 global.fetch = jest.fn(() =>
