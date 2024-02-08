@@ -16,12 +16,9 @@ document.getElementById = jest.fn((id) => ({
 const eventMock = { preventDefault: jest.fn() };
 
 // Mock the checkForName function
-jest.mock(
-  "/Users/Angelica/Documents/Coding/Udacity/front-end-nanodegree/news-article-nlp/src/client/js/nameChecker.js",
-  () => ({
-    checkForName: jest.fn(),
-  })
-);
+jest.mock("../client/js/nameChecker", () => ({
+  checkForName: jest.fn(),
+}));
 
 describe("handleSubmit function", () => {
   test("should handle form submission correctly", async () => {
