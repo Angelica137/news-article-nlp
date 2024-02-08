@@ -15,6 +15,14 @@ document.getElementById = jest.fn((id) => ({
 }));
 const eventMock = { preventDefault: jest.fn() };
 
+// Mock the checkForName function
+jest.mock(
+  "/Users/Angelica/Documents/Coding/Udacity/front-end-nanodegree/news-article-nlp/src/client/js/nameChecker.js",
+  () => ({
+    checkForName: jest.fn(),
+  })
+);
+
 describe("handleSubmit function", () => {
   test("should handle form submission correctly", async () => {
     await handleSubmit(eventMock);
@@ -29,7 +37,7 @@ describe("handleSubmit function", () => {
       body: JSON.stringify({ url: "Mock input value" }),
     });
 
-    expect(document.getElementById).toHaveBeenCalledWith("results");
+    expect(document.getElementById).toHaveBeenCalledWith("name");
     expect(document.getElementById("results").innerHTML).toBe(
       "Mock summary response"
     );

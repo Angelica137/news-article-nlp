@@ -1,3 +1,5 @@
+import { checkForName } from "./nameChecker.js";
+
 function handleSubmit(event) {
   event.preventDefault();
 
