@@ -2,6 +2,7 @@ const { merge } = require("webpack-merge");
 const common = require("./webpack.config.js");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+const { WorkboxWebpackPlugin } = require("worbox-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "production",
@@ -27,6 +28,10 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
       chunkFilename: "[id].[contenthash].css",
+    }),
+    new WorkboxWebpackPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
     }),
   ],
 });
