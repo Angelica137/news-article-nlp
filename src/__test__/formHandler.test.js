@@ -1,4 +1,4 @@
-import { handleSubmit } from "../src/client/js/formHandler.js";
+import { handleSubmit } from "../src/client/js/formHandler";
 
 // Mock the fetch function
 global.fetch = jest.fn(() =>
