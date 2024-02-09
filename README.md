@@ -23,7 +23,26 @@ This is a project to practice using developer build tools. The goal is to build 
 - Workbox (for service workers)
 - MeaningCLoud API (for sentiment qanalysis)
 
+
+## Installation
+
+1. Clone the repository
+
+```git clone https://github.com/Angelica137/news-article-nlp```
+
+2. Navigate to the project directory:
+
+```cd news-article-nlp```
+
+3. Install depenendencies:
+
+```npm install```
+
+
 ## Usage
-The user is able to enter a URL of an articlae they want to analyse and the app will fetch the summary of the article.
+1. Start the server:
+```npm start```
+
+2. Open a web browser and go to [localhost 3000](http://localhost:3000/)
 
 This app uses the MeaningCloud API from meaningcloud.org
