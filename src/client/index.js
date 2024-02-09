@@ -4,7 +4,7 @@ import { handleSubmit } from "./js/formHandler";
 window.handleSubmit = handleSubmit;
 window.checkForName = checkForName;
 
-console.log(checkForName);
+console.log("Form hanlder loaded");
 
 alert("I exist");
 console.log("Change!");
@@ -19,6 +19,9 @@ import "./styles/header.scss";
 document.getElementById("button").addEventListener("click", async () => {
   const urlToSummarise = document.getElementById("name").value;
 
+  console.log("Button clicked");
+  console.log("URL to summarise:", urlToSummarise);
+
   try {
     const response = await fetch("/submitForm", {
       method: "POST",
@@ -31,6 +34,8 @@ document.getElementById("button").addEventListener("click", async () => {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const data = await response.json();
+
+    console.log("Response from server", data);
 
     document.getElementById("results").innerHTML = data.summary;
   } catch (error) {
